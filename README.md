@@ -681,6 +681,7 @@ model.save('model_vgg16_hybrid_rockissue_new_10epchs_32x1200.h5')
 
 ## Conclusion
 
+Training and Validation losses on the VGG16 model
 ![image processing pipeline](test_val_loss_plots/Hybrid_DataSet/model_vgg16_hybrid_rockissue_new_10epchs_64x460x100.jpg)
 
 The models has been evaluated based on the following :
