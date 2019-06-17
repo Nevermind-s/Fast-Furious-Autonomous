@@ -155,7 +155,7 @@ data.head()
 </table>
 </div>
 
-
+In our case we decided to predict the steer angle without the throttle values because the car can run on all tracks at any speed. By looking at the image, we can't determine the speed of the car, so the models cannot learn to do it. Finaly, we decided to compute the throttle by using the speed of the car and the speed limit. This is represented by the equation : Throttle = 1 - (ACTUAL_SPEED/SPEED_LIMIT). This allows us to specify the car's speed.
 
 ### Data distribution
 
