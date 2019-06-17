@@ -1,6 +1,6 @@
 
 # Fast & Furious & Autonomous : Self Driving Car Laboratory ECAM 2019
-## Authors : Hubert Mugabo-Pitie - Salim Boutlendj
+## Authors : Hubert Mugabo Pitie - Salim Boutlendj
 
 ## Libraries 
 
