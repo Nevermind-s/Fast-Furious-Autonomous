@@ -8,9 +8,9 @@
 - Keras : High-level neural networks API for Deep learnings that uses Tensorflow as a backend
 - CV2 : Image Processing library.
 - Pandas : Library used for data stucture and data analysis (Handle the dataset csv file)
-- imgaug : Library used for image aumgmentation to easy flip, to easily generate images from exsitant ones through image tranformations technics.
-- Sklearn : Machine learning library used to efficiently split our dataset to train validattion sets and also to shufle throught learning process.
-- Matplotlib : A libray used to dispaly graphics and images from the data we are manipulating.
+- imgaug : Library used for image aumgmentation, to easily generate images from exsitant ones through image tranformations technics.
+- Sklearn : Machine learning library used to efficiently split our dataset to train and validattion sets and also to shufle through learning process.
+- Matplotlib : A library used to display graphics and images from the data that are manipulated.
 
 
 
@@ -28,9 +28,9 @@ python -m pip install -r requierments.txt
 
 ### Windows 
 
-Shapely which is a library used by imgaug need to be installed manually using the [.whl file](https://www.lfd.uci.edu/~gohlke/pythonlibs/#shapely)
+Shapely a library used by imgaug needs to be installed manually using the [.whl file](https://www.lfd.uci.edu/~gohlke/pythonlibs/#shapely)
 
-Then install the requiermenrts : 
+Then install the requierments : 
 ```bash
 python -m pip install -r requierments.txt
 ```
@@ -71,7 +71,7 @@ import random
 
 ## Dataset 
 
-The dataset is generated using the udacity self driving simulator. It stores every frame while recording through 3 cameras (left, center, right), it also saves un a .csv file all the action taken by the driver (steering, throttle, reverse, speed) 
+The dataset is generated using the udacity self driving simulator. It stores every frame while recording through 3 cameras (left, center, right), it also saves a .csv file of all actions taken by the driver (steering, throttle, reverse, speed) 
 
 - Speed : a value between [0,30] expressing mph
 - Throttle : a value between [0.0, 1.0], 1 means not throttling at all
@@ -86,23 +86,7 @@ pd.set_option('display.max_colwidth', -1)
 data.head()
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -175,7 +159,7 @@ data.head()
 
 ### Data distribution
 
-With this histogram we want to display the distribution of the steering angles of our dataset. We concluded that our dataset is not well balanced and it may lead to a false learning since we have 7000 '0' values our model will likely tend to go straight.
+With this histogram we want to display the distribution of the steering angles of our dataset. We concluded that our dataset is not well balanced and it may lead to a false learning since we have nearly 14000 '0' values our model will likely tend to go straight.
 
 
 ```python
@@ -187,19 +171,11 @@ plt.bar(center, hist, width=0.05)
 plt.plot((np.min(data['steering']), np.max(data['steering'])), (treshold, treshold))
 ```
 
-
-
-
-    [<matplotlib.lines.Line2D at 0x2104bdc2e48>]
-
-
-
-
 ![png](md_images/output_9_1.png)
 
 
 ### Data Cleaning
-Thus we decided to only keep 500 '0' values. This treshold results from testing differents value starting from 3500 and reducing, the feedback was the behaviour of our model in the simulator he tends to ignore some bends and not turning at the right time.
+Thus we decided to only keep 500 '0' values. This treshold results from testing differents value starting from 3500 and reducing, the feedback was the behaviour of our model in the simulator, it tends to ignore some bends and does not turn at the right time.
 
 
 ```python
@@ -226,13 +202,7 @@ plt.plot((np.min(data['steering']), np.max(data['steering'])), (treshold, tresho
     total data: 18590
     removed: 13423
     remaining: 5167
-    
-
-
-
-
-    [<matplotlib.lines.Line2D at 0x2104aa10080>]
-
+  
 
 
 
@@ -271,7 +241,7 @@ image_paths, steerings = load_img_steering(datadir + '/IMG', data)
     Name: 15, dtype: object
     
 
-### Data slipting (Train-Test)
+### Data spliting (Train-Test)
 
 We devided our dataset to train-test using the train_test_split function provided by sklearn lib.
 
@@ -293,7 +263,7 @@ print('Training Samples: {}\nValid Samples: {}'.format(len(X_train), len(X_valid
 
 
 
-The two sets look to have to same shape, which is a good thing that means that our data cleaning was correctly done and the dataset is correctly balanced.
+The two sets have a similar shape, which is a good thing, this means that our data cleaning was correctly done and the dataset is correctly balanced.
 
 
 
@@ -305,13 +275,6 @@ axes[0].set_title('Training set')
 axes[1].hist(y_valid, bins=max_bars, width=0.05, color='green')
 axes[1].set_title('Test set')
 ```
-
-
-
-
-    Text(0.5, 1.0, 'Test set')
-
-
 
 
 ![png](md_images/output_16_1.png)
@@ -481,7 +444,7 @@ for i in range(10):
 
 ![image processing pipeline](md_images/img_pipeline.jpg)
 
-- Crop : Delete unecessry details on the image, only focus on the road.
+- Crop : Delete unnecessary details on the image, only focus on the road.
 - RGB 2 YUV : chromiance & lum, more bandwith and less data.
 - Gaussian Blur : To smooth the image and reduce the noise
 - Resize : Input datas need to be resized into specific shapes according to the model used because the convolutional kernels are adapted to a specific size
@@ -727,7 +690,7 @@ The models has been evaluated based on the following :
 - Behaviour on track 2 of the simulator old version (2016) to evaluate generalization
 
 
-The final modal is accurate on all the tracks, but not perfect as a human driver.
+The final model is accurate on all the tracks, but not perfect as a human driver. Increasing the number of epochs might lead to better results.
 
 ## Source
 - [VGG Paper](https://arxiv.org/pdf/1409.1556.pdf)
