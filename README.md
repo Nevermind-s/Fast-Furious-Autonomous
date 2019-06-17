@@ -681,7 +681,10 @@ model.save('model_vgg16_hybrid_rockissue_new_10epchs_32x1200.h5')
 
 ## Conclusion
 
-Training and Validation losses on the VGG16 model
+All models were able to learn to drive on the first track accurataly. But on the VGG16 model was able to drive the car on the second track. The following figure shows the training and validation losses on the VGG16 model.
+
+
+
 ![image processing pipeline](test_val_loss_plots/Hybrid_DataSet/model_vgg16_hybrid_rockissue_new_10epchs_64x460x100.jpg)
 
 The models has been evaluated based on the following :
@@ -690,8 +693,14 @@ The models has been evaluated based on the following :
 - Behaviour on track 1 & 2
 - Behaviour on track 2 of the simulator old version (2016) to evaluate generalization
 
+By increasing the number of epochs the results were improved, until the model reached a plateau. We decided to stop at 100 because the driving was corretly done.
 
-The final model is accurate on all the tracks, but not perfect as a human driver. Increasing the number of epochs might lead to better results.
+In general, the VGG16 drives as good as the human and in some cases better. For example, on the second track, the VGG16 was able to take difficult turns easily and at constant speed. Furthermore, the model was able to drive the car in difficult situation were the front road could not be seen because of the road's slope. It means that either the model memorized how to drive (overfitting) or it learned to drive on the circuit (generalized well). We think that the latter hypothesis is correct because the VGG61 model is able to drive on both circuit.
+
+To improve the model, we increased the dataset by adding parts of both circuits where the model wasn't able to drive.
+
+
+
 
 ## Source
 - [VGG Paper](https://arxiv.org/pdf/1409.1556.pdf)
