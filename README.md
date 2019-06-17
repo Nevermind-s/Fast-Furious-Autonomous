@@ -693,9 +693,9 @@ The models has been evaluated based on the following :
 - Behaviour on track 1 & 2
 - Behaviour on track 2 of the simulator old version (2016) to evaluate generalization
 
-By increasing the number of epochs the results were improved, until the model reached a plateau. We decided to stop at 100 because the driving was corretly done. To improve the model, we increased the dataset by adding parts of both circuits where the model wasn't able to drive.
+By increasing the number of epochs the results were improved, until the model reached a plateau. We decided to stop at 100 because the driving was corretly done. To improve the model, we increased the dataset by adding parts of both tracks where the model wasn't able to drive.
 
-In general, the VGG16 drives as good as the human and in some cases better. For example, on the second track, the VGG16 was able to take difficult turns easily and at constant speed. Furthermore, the model was able to drive the car in difficult situation were the front road could not be seen because of the road's slope. It means that either the model memorized how to drive (overfitting) or it learned to drive on the circuit (generalized well). We think that the latter hypothesis is correct because the VGG61 model is able to drive on both circuit.
+In general, the VGG16 drives as good as the human and in some cases better. For example, on the second track, the VGG16 was able to take difficult turns easily and at constant speed. Furthermore, the model was able to drive the car in difficult situation were the front road could not be seen because of the road's slope. It means that either the model memorized how to drive (overfitting) or it learned to drive on the track (generalized well). We think that the latter hypothesis is correct because the VGG61 model is able to drive on both circuit.
 
 The differences between the models on the second track are explained by their architecture
 - NVIDIA: This model was created to clone the behaviour of the drive. The quality of the driving determines the accuracy of the model.
