@@ -718,7 +718,7 @@ model.save('model_vgg16_hybrid_rockissue_new_10epchs_32x1200.h5')
 
 ## Conclusion
 
-![image processing pipeline](test_val_loss_plots/Hybrid_Dataset/model_vgg16_hybrid_rockissue_new_10epchs_64x460x100.jpg)
+![image processing pipeline](test_val_loss_plots/hybrid_dataset/model_vgg16_hybrid_rockissue_new_10epchs_64x460x100.jpg)
 
 The models has been evaluated based on the following :
 
@@ -730,7 +730,8 @@ The models has been evaluated based on the following :
 The final modal is accurate on all the tracks, but not perfect as a human driver.
 
 ## Source
-
+- [VGG Paper](https://arxiv.org/pdf/1409.1556.pdf)
+- [Nvidia Paper on self-driving system DAVE-2](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) 
 -	https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
 -	https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2
 -	https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced
