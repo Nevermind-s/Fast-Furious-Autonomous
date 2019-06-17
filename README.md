@@ -575,7 +575,7 @@ The model used in this project is inspired from the VGG16 architecutre and was t
 - Input shape reduced to 64x64 initially 214x214
 - Reducing Conv layers (Small dataset and few features)
 - Removing the softmax activation function in the last layer, beacause we do not want to classify but predict the steering angle from the features detected on the images
-- Reducing the FC layer to have less parameters (4194816), since our images are small and contains few features
+- Reducing the FC layers to have less parameters (4194816), since our images are small and contain few features
 
 
 ```python
