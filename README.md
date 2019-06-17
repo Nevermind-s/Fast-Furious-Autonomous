@@ -718,7 +718,7 @@ model.save('model_vgg16_hybrid_rockissue_new_10epchs_32x1200.h5')
 
 ## Conclusion
 
-![image processing pipeline](test_val_loss_plots/hybrid_dataset/model_vgg16_hybrid_rockissue_new_10epchs_64x460x100.jpg)
+![image processing pipeline](test_val_loss_plots/Hybrid_DataSet/model_vgg16_hybrid_rockissue_new_10epchs_64x460x100.jpg)
 
 The models has been evaluated based on the following :
 
